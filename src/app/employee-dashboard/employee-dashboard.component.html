@@ -1,0 +1,85 @@
+<nav class="navbar-light bg-primary">
+    <div class="container-fluid">
+        <h1 style="color:aliceblue"> Tutorialapp </h1>
+        <nav>
+          <a routerLink="/Home" routerLinkActive="active"> Home </a>
+          <a routerLink="/about" routerLinkActive="active"> About </a>
+        </nav>
+        <div class="d-flex">
+        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success left"> Add Details </button>  
+        </div>
+    </div>
+</nav>
+
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col"> Title</th>
+            <th scope="col"> Name</th>
+            <th scope="col"> Username</th>
+            <th scope="col"> Email</th>
+            <th scope="col"> Password</th>
+            <th scope="col"> Gender</th>
+            <th scope="col"> Action </th>
+        </tr>
+    </thead>
+    <tbody> 
+        <tr>
+            <td> Mr </td>
+            <td> jony  </td>
+            <td> jonycxt </td>
+            <td> jony@gmail.com</td>
+            <td> csyt35 </td>
+            <td> Male </td>
+            <td>
+                <button class="btn btn-info"> Edit </button>
+                <button class="btn btn-danger mx-3"> Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">EmployeeDetails</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="formValue">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Title</label> 
+                  <br>
+                  <input type="text" formcontrolName="title" class="forrm-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label"> Name </label>
+                  <input type="text" formcontrolName="name" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label"> UserName </label>
+                    <input type="text" formcontrolName="Username" class="form-control" id="exampleInputPassword1">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label"> Email </label>
+                    <input type="email" formcontrolName="email" class="form-control" id="exampleInputPassword1">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label"> Password </label>
+                    <input type="text" formcontrolName="Password" class="form-control" id="exampleInputPassword1">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label"> Gender </label>
+                    <input type="text" formcontrolName="Gender" class="form-control" id="exampleInputPassword1">
+                  </div>
+                 </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" (click)="postEmployeeDetails()" class="btn btn-primary"> Add </button>
+        </div>
+      </div>
+    </div>
+  </div>
